@@ -5,7 +5,7 @@ import {
   HarmBlockThreshold,
 } from '@google/generative-ai';
 
-console.log(import.meta.env.VITE_API_KEY);
+// console.log(import.meta.env.VITE_API_KEY);
 const apiKey = import.meta.env.VITE_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
@@ -29,6 +29,7 @@ async function run(prompt) {
 
   const result = await chatSession.sendMessage(prompt);
   console.log(result.response.text());
+  return result.response.text();
 }
 
 export default run;
